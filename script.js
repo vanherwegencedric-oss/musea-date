@@ -4,7 +4,8 @@
 const NAAM = "Ella";
 const MIJN_NAAM = "Cédric";
 const INSTAGRAM = "cedric2007_vhw";   // zonder @
-const AANTAL_DAGEN = 10;              // hoeveel dagen vanaf morgen ze kan kiezen
+const EERSTE_DAG = new Date(2026, 10, 14);   // 14 november 2026 (maand 10 = november, want januari = 0)
+const LAATSTE_DAG = new Date(2026, 10, 30);  // 30 november 2026
 
 const MUSEA = [
     { icoon: "🎻", naam: "MIM, muziekinstrumentenmuseum", tekst: "Brussel. Instrumenten bekijken en beluisteren met een koptelefoon." },
@@ -132,8 +133,8 @@ window.addEventListener("load", () => {
 function renderStart() {
     app.innerHTML = `
         <p class="tag">Made for ${NAAM} 💗</p>
-        <h1>Heyy ${NAAM}... 🥰</h1>
-        <p>Eerst even spelen. Vind alle paartjes, en als je wint heb ik een vraag voor je.</p>
+        <h1>Heyy ${NAAM}... </h1>
+        <p>Ik heb een vraag voor je, maar om ze te stellen moet je eerst effe dit spel winnen.</p>
         <button class="btn" id="start">Start het spel</button>
     `;
     $("start").addEventListener("click", () => {
@@ -253,10 +254,10 @@ function komendeDagen() {
     const namen = ["ZO", "MA", "DI", "WO", "DO", "VR", "ZA"];
     const maanden = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
     const lijst = [];
-    for (let i = 1; i <= AANTAL_DAGEN; i++) {
-        const d = new Date();
-        d.setDate(d.getDate() + i);
+    const d = new Date(EERSTE_DAG);
+    while (d <= LAATSTE_DAG) {
         lijst.push({ dag: namen[d.getDay()], datum: d.getDate() + " " + maanden[d.getMonth()] });
+        d.setDate(d.getDate() + 1);
     }
     return lijst;
 }
