@@ -201,7 +201,7 @@ function renderGame() {
 function renderQuestion() {
     app.innerHTML = `
         <h1>Gewonnen! 🎉</h1>
-        <p>Dan nu mijn vraag: wil je met mij naar een museum? 👀</p>
+        <p>Dan nu mijn vraag: Wil je met mij op date naar een museum?</p>
         <div class="row">
             <button class="btn" id="yes">Ja 💗</button>
             <button class="btn alt" id="no">Nee 🙈</button>
