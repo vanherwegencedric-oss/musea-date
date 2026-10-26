@@ -310,10 +310,10 @@ function renderDays() {
 // Scherm 6: samenvatting en versturen
 // ══════════════════════════════════════════════
 function buildMessage() {
-    let msg = `Hey ${MIJN_NAAM}! 💗 Ik kies ${state.museum}.\n\nDeze dagen kunnen voor mij:\n`;
+    let msg = `Hey ${MIJN_NAAM}! Ik kies ${state.museum}.\n\nDeze dagen kunnen voor mij:\n`;
     state.days.forEach((d) => { msg += `📅 ${d}\n`; });
     if (state.note.trim()) msg += `\n📝 ${state.note.trim()}\n`;
-    msg += "\nTot dan! 🥰";
+    msg += "\nTot dan!";
     return msg;
 }
 
